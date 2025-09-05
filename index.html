@@ -1,0 +1,199 @@
+<div class="scene">
+  <div class="lava-lamp" style="--height: 400; --width: 150">
+    <div class="lava-lamp__main">
+      <div class="lava-lamp__glass">
+        <div class="lava-lamp__lava">
+          <svg>
+            <ellipse class="blob blob--top" cx="35" cy="0" rx="35" ry="10"></ellipse>
+            <ellipse class="blob blob--bottom" cx="75" cy="270" rx="75" ry="10"></ellipse>
+            <circle class="blob" r="44.5" cx="34" cy="400" style="--skewX: 0; --skewY: -2; --height: 89; --speed: 27; --delay: -4; --direction: alternate;"></circle>
+            <circle class="blob" r="48.5" cx="9" cy="400" style="--skewX: 0; --skewY: 3; --height: 97; --speed: 23; --delay: -8; --direction: alternate;"></circle>
+            <circle class="blob" r="50" cx="21" cy="400" style="--skewX: -2; --skewY: -1; --height: 100; --speed: 9; --delay: -3; --direction: alternate;"></circle>
+          </svg>
+        </div>
+        <div class="lava-lamp__lava">
+          <svg>
+            <ellipse class="blob blob--top" cx="35" cy="0" rx="35" ry="10"></ellipse>
+            <ellipse class="blob blob--bottom" cx="75" cy="270" rx="75" ry="10"></ellipse>
+            <circle class="blob" r="40" cx="87" cy="400" style="--skewX: 3; --skewY: -3; --height: 80; --speed: 27; --delay: -1; --direction: alternate-reverse;"></circle>
+            <circle class="blob" r="19.5" cx="112" cy="400" style="--skewX: -1; --skewY: 0; --height: 39; --speed: 48; --delay: -1; --direction: alternate-reverse;"></circle>
+            <circle class="blob" r="29" cx="105" cy="400" style="--skewX: -5; --skewY: 5; --height: 58; --speed: 34; --delay: -10; --direction: alternate;"></circle>
+            <circle class="blob" r="16.5" cx="141" cy="400" style="--skewX: 4; --skewY: 1; --height: 33; --speed: 22; --delay: -8; --direction: alternate;"></circle>
+          </svg>
+        </div>
+        <div class="lava-lamp__lava">
+          <svg>
+            <ellipse class="blob blob--top" cx="35" cy="0" rx="35" ry="10"></ellipse>
+            <ellipse class="blob blob--bottom" cx="75" cy="270" rx="75" ry="10"></ellipse>
+            <circle class="blob" r="43.5" cx="105" cy="400" style="--skewX: 3; --skewY: 5; --height: 87; --speed: 11; --delay: -6; --direction: alternate;"></circle>
+            <circle class="blob" r="34" cx="21" cy="400" style="--skewX: 5; --skewY: -3; --height: 68; --speed: 32; --delay: -2; --direction: alternate;"></circle>
+          </svg>
+        </div>
+        <div class="lava-lamp__lava">
+          <svg>
+            <ellipse class="blob blob--top" cx="35" cy="0" rx="35" ry="10"></ellipse>
+            <ellipse class="blob blob--bottom" cx="75" cy="270" rx="75" ry="10"></ellipse>
+            <circle class="blob" r="20.5" cx="21" cy="400" style="--skewX: 1; --skewY: 5; --height: 41; --speed: 31; --delay: -2; --direction: alternate-reverse;"></circle>
+          </svg>
+        </div>
+      </div>
+    </div>
+    <div class="lava-lamp__base"></div>
+  </div>
+  <style>
+    * {
+  box-sizing: border-box;
+}
+body {
+  background: #1c0136;
+  min-height: 100vh;
+}
+.scene {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+}
+img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-69.5%, -26%);
+  opacity: 0.2;
+  height: 1300px;
+}
+.lava-lamp {
+  height: calc(var(--height) * 1px);
+  width: calc(var(--width) * 1px);
+  position: relative;
+}
+.lava-lamp:after {
+  content: "";
+  height: 500px;
+  width: 500px;
+  position: absolute;
+  background: radial-gradient(circle at 50% 50%, #19b5fe, transparent 60%);
+  top: 45%;
+  left: 50%;
+  z-index: 4;
+  transform: translate(-50%, -50%);
+  filter: blur(10px);
+  opacity: 0.5;
+}
+.lava-lamp:before {
+  content: "";
+  height: 25%;
+  width: 300%;
+  border-radius: 100%;
+  background: radial-gradient(ellipse at 50% 50%, #19b5fe, transparent 60%);
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  transform: translate(-50%, 0);
+  opacity: 0.5;
+  filter: blur(10px);
+}
+.lava-lamp__main {
+  border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+.lava-lamp__main:after,
+.lava-lamp__main:before {
+  background: #000;
+  content: "";
+  height: 12%;
+  left: 0;
+  position: absolute;
+  width: 100%;
+}
+.lava-lamp__main:after {
+  top: 0;
+}
+.lava-lamp__main:before {
+  bottom: 0;
+  height: 26%;
+}
+.lava-lamp__glass {
+  background: radial-gradient(circle at 50% 50%, #3a539b 25%, #080808);
+  border-radius: 50%/10%;
+  overflow: hidden;
+  height: 70%;
+  left: 0;
+  position: absolute;
+  top: 10%;
+  width: 100%;
+  z-index: 2;
+}
+.lava-lamp__base {
+  height: 20%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  overflow: hidden;
+  border-radius: 0 0 50% 50%/0 0 35% 35%;
+}
+.lava-lamp__base:before {
+  content: "";
+  background: #000;
+  border-radius: 50% 50% 50% 50%/60% 60% 40% 40%;
+  position: absolute;
+  top: -60%;
+  height: calc(var(--height) * 1px);
+  width: calc(var(--width) * 1px);
+}
+.lava-lamp__lava {
+  border-radius: 50%/10%;
+  height: 100%;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  filter: url("#goo");
+}
+.lava-lamp__lava svg {
+  height: 280px;
+  width: 150px;
+}
+.blob {
+  animation-delay: calc(var(--delay) * 1s);
+  animation-direction: var(--direction);
+  animation-duration: calc(var(--speed) * 1s);
+  animation-iteration-count: infinite;
+  animation-name: blob;
+  animation-timing-function: linear;
+  fill: #29f1c3;
+  transform-box: fill-box;
+}
+.blob--bottom,
+.blob--top {
+  animation: none;
+}
+.blob--top {
+  animation: sway 20s infinite linear;
+}
+
+@keyframes sway {
+  50% {
+    transform: translate(50%, 0);
+  }
+}
+
+@keyframes blob {
+  from {
+    transform: skew(calc(var(--skewX) * 1deg), calc(var(--skewY) * 1deg))
+      translate(0, 0);
+  }
+  to {
+    transform: skew(calc(var(--skewX) * 1deg), calc(var(--skewY) * 1deg))
+      translate(0, calc((400 + (var(--height) * 2)) * -1px));
+  }
+}
+
+  </style>
+</div>
